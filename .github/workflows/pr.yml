@@ -1,0 +1,17 @@
+name: PR Tag Release
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  tag-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Triggering Deployment
+        run: |
+          gh workflow run deploy.yml --repo macnev2013/wf-dispatch-gh-action --ref main -f logLevel=warning -f tags=false
