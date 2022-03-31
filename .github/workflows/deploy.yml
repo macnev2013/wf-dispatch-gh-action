@@ -1,27 +1,26 @@
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      environment:
+        description: 'Environment'
         required: true
-        default: 'warning'
         type: choice
         options:
-        - info
-        - warning
-        - debug
-      tags:
+        - stage
+        - beta
+        - prod
+      version:
         description: 'Test scenario tags'
-        required: false
-        type: boolean
+        required: true 
+        type: string
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
+          echo "Version: $VERSION"
         env:
-          LEVEL: ${{ github.event.inputs.logLevel }}
-          TAGS: ${{ github.event.inputs.tags }}
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
+          VERSION: ${{ github.event.inputs.version }}
