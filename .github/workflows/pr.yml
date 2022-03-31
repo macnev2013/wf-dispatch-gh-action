@@ -14,5 +14,9 @@ jobs:
     steps:
       - name: Triggering Deployment
         run: |
-          gh auth login
-          gh workflow run deploy.yml --repo macnev2013/wf-dispatch-gh-action --ref main -f logLevel=warning -f tags=false
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization:Bearer ${{ secrets.GH_API_TOKEN }}"
+            https://api.github.com/repos/macnev2013/wf-dispatch-gh-action/actions/workflows/deploy.yml/dispatches \
+            -d '{"ref":"main", "inputs": { "logLevel":"info", "tags":"false" }}'
