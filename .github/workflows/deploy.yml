@@ -21,6 +21,11 @@ jobs:
       - run: |
           echo "Environment: $ENVIRONMENT"
           echo "Version: $VERSION"
+          if [ ${ENVIRONMENT} == "prod" ] ; then
+            echo "prod environment is selected"
+          else
+            echo "${ENVIRONMENT} is selected"
+          fi
         env:
           ENVIRONMENT: ${{ github.event.inputs.environment }}
           VERSION: ${{ github.event.inputs.version }}
