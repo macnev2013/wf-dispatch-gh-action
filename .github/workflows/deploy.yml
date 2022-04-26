@@ -21,10 +21,11 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2.4.0
-
-      - run: git checkout tags/${VERSION}
-        env:
-          VERSION: ${{ github.event.inputs.version }}
+        with:
+          ref: refs/tags/${{ github.event.inputs.version }}
+#       - run: git checkout tags/${VERSION}
+#         env:
+#           VERSION: ${{ github.event.inputs.version }}
 
       - run: git branch
 
