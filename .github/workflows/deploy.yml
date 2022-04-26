@@ -23,6 +23,8 @@ jobs:
         uses: actions/checkout@v2.4.0
 
       - run: git checkout ${VERSION}
+        env:
+          VERSION: ${{ github.event.inputs.version }}
       - run: git branch
       - run: cat README.md
       - run: |
