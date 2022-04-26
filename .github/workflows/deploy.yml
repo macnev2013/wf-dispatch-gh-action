@@ -26,7 +26,7 @@ jobs:
           else
             echo "${ENVIRONMENT} is selected"
           fi
-          docker pull mysql:${VERSION}
+          docker pull mysql:${VERSION}-debian
         env:
           ENVIRONMENT: ${{ github.event.inputs.environment }}
           VERSION: ${{ github.event.inputs.version }}
