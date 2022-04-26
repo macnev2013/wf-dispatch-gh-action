@@ -18,6 +18,13 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - run: git checkout ${VERSION}
+      - run: git branch
+      - run: cat README.md
       - run: |
           echo "Environment: $ENVIRONMENT"
           echo "Version: $VERSION"
@@ -26,7 +33,6 @@ jobs:
           else
             echo "${ENVIRONMENT} is selected"
           fi
-          docker pull mysql:${VERSION}-debian
         env:
           ENVIRONMENT: ${{ github.event.inputs.environment }}
           VERSION: ${{ github.event.inputs.version }}
