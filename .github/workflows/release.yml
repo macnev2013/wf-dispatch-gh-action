@@ -40,7 +40,7 @@ jobs:
         zip -r names.zip ./terraform-provider-aws/names
 
     - name: Upload Release Asset
-      id: upload-release-asset 
+      id: upload-release-asset-0
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,7 +51,7 @@ jobs:
         asset_content_type: application/zip
 
     - name: Upload Release Asset
-      id: upload-release-asset 
+      id: upload-release-asset-1
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
