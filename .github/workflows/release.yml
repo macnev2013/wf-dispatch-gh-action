@@ -17,7 +17,7 @@ jobs:
 
     - name: Get Release Date
       run: |
-        echo "RELEASE_DATE=`date '+%D'`" >> $GITHUB_ENV
+        echo "RELEASE_DATE=`date`" >> $GITHUB_ENV
 
     - name: Print Release Date
       run: |
