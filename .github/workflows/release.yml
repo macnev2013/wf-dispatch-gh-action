@@ -37,6 +37,7 @@ jobs:
     - name: Create Zip file
       run: |
         zip -r skaff.zip ./terraform-provider-aws/skaff
+        zip -r names.zip ./terraform-provider-aws/names
 
     - name: Upload Release Asset
       id: upload-release-asset 
