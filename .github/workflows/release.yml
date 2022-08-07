@@ -55,8 +55,15 @@ jobs:
       with:
         name: testing artifacts
         path: |
-          skaff.zip
           ./terraform-provider-aws/skaff
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: testing artifacts
+        path: |
+          skaff.zip
+          ./terraform-provider-aws/names
 
   # upload-from-other-job:
 
