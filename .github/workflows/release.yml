@@ -56,6 +56,7 @@ jobs:
         name: testing artifacts
         path: |
           skaff.zip
+          ./terraform-provider-aws/skaff
 
   # upload-from-other-job:
 
