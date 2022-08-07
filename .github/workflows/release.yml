@@ -69,6 +69,7 @@ jobs:
 
     name: Artifact Upload
     runs-on: ubuntu-latest
+    needs: goat-prepare
 
     steps:
 
