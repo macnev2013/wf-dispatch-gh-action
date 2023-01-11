@@ -1,0 +1,13 @@
+name: Execute Tests
+on:
+  push:
+    - no-annotation
+
+jobs:
+
+  exit:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: exit with status 1
+      run: exit 1
