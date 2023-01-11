@@ -13,5 +13,8 @@ jobs:
 
     - name: exit with status 1
       run: |
-        echo "::echo::off"
         exit 1
+
+    - name: always run
+      if: always()
+      run: echo "this worked"
