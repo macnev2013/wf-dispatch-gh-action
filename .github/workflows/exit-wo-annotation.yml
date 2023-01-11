@@ -11,4 +11,4 @@ jobs:
     steps:
 
     - name: exit with status 1
-      run: exit 1
+      run: exit 1 || echo "Action Failed"
