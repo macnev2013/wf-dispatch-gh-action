@@ -23,7 +23,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Test Results (Python ${{ matrix.python-version }})
-        path: test.xml
+        path: report.xml
 
 
 
