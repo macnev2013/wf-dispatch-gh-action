@@ -12,6 +12,7 @@ jobs:
     steps:
 
     - name: exit with status 1
+      continue-on-error: true
       run: |
         exit 1
 
